@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenMRS Dependency Vulnerability Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="report-page">
+    <header class="report-header">
+      <h1>OpenMRS Dependency Vulnerability Report</h1>
+      <div class="title-accent" aria-hidden="true"></div>
+      <p>
+        A summary of known security vulnerabilities detected across OpenMRS modules by automated
+        dependency scanning. Each module lists its vulnerable dependencies, severity levels, and
+        recommended fix versions to help maintainers prioritize upgrades.
+      </p>
+    </header>
+
+    <section id="statusBanner" class="status-banner" aria-live="polite"></section>
+
+    <section id="repoContainer" class="repo-list" aria-live="polite"></section>
+  </main>
+
+  <template id="loadingTemplate">
+    <article class="status-card">Loading dependency reports...</article>
+  </template>
+
+  <template id="emptyTemplate">
+    <article class="status-card">No vulnerabilities found in the loaded reports.</article>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
